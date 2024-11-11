@@ -1,0 +1,9 @@
+/* video downloads style */
+.video-downloads {
+  display: grid;
+  align-items: center;
+  width: 100%;
+  overflow-y: auto;
+  max-height: 500px;
+  border-radius: var(--main-border-rad);
+}

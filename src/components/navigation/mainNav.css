@@ -1,0 +1,69 @@
+.main-nav {
+  --link-width: 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--sec-col5);
+  position: relative;
+
+  & > * {
+    flex: 1;
+    transition: color var(--transition-ms);
+    padding: 10px;
+    border-radius: 100px;
+    text-align: center;
+    min-width: var(--link-width);
+
+    &:is(:focus, :focus-visible, :hover) {
+      color: light-dark(#000, #fff);
+    }
+
+    &:not(#navIndicator) {
+      z-index: 1;
+    }
+
+    &.active {
+      color: light-dark(#000, var(--main-col)) !important;
+      & ~ #navIndicator {
+        display: unset;
+      }
+
+      &:nth-child(1) ~ #navIndicator {
+        left: 0;
+      }
+      &:nth-child(2) ~ #navIndicator {
+        left: var(--link-width);
+      }
+      &:nth-child(3) ~ #navIndicator {
+        left: calc(2 * var(--link-width));
+      }
+      &:nth-child(4) ~ #navIndicator {
+        left: calc(3 * var(--link-width));
+      }
+      &:nth-child(5) ~ #navIndicator {
+        left: calc(4 * var(--link-width));
+      }
+    }
+  }
+
+  & > #navIndicator {
+    display: none;
+    position: absolute;
+    height: 100%;
+    background-image: linear-gradient(
+      90deg,
+      light-dark(#ddd, var(--sec-col1)),
+      light-dark(#aaa, var(--sec-col3))
+    );
+    transition: left var(--transition-ms);
+    top: 0;
+    left: 0;
+  }
+}
+
+@media (width <= 768px) {
+  .main-nav {
+    display: none;
+  }
+}

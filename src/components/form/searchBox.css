@@ -1,0 +1,134 @@
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: light-dark(#ddd, var(--sec-col2));
+  padding: 7px;
+  border-radius: 100px;
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  transition: var(--transition-ms);
+
+  &:has(#searchInput:focus) {
+    background-color: light-dark(#eee, #111);
+    box-shadow: 0 5px 10px light-dark(#00000080, #ffffff60);
+    translate: 0 -2px;
+  }
+}
+
+.hints {
+  position: absolute;
+  top: 115%;
+  left: 20px;
+
+  & > .hints-icon {
+    cursor: pointer;
+    transition: color var(--transition-ms);
+
+    &:hover {
+      color: var(--main-col);
+
+      & + .info {
+        opacity: 1;
+      }
+    }
+  }
+
+  & > .info {
+    font-size: 0.85rem;
+    background-color: light-dark(#ddd, var(--sec-col2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity var(--transition-ms);
+
+    & > .hint {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      & > .keys {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        & > .key {
+          font-family: monospace;
+          background-color: light-dark(#eee, var(--sec-col4));
+          padding: 5px;
+          border-radius: 5px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+#searchInput {
+  width: 100%;
+  padding: 20px;
+  outline: none;
+  border: none;
+  background: none;
+  font-size: 1.1rem;
+  border-radius: inherit;
+
+  &::placeholder {
+    color: light-dark(var(--sec-col3), var(--sec-col5));
+    opacity: 0.75;
+  }
+
+  &:placeholder-shown + .clear-input {
+    display: none;
+  }
+}
+
+.clear-input {
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#searchBtn {
+  border-radius: inherit;
+  background-color: var(--main-col);
+  border: none;
+  outline: none;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-property: translate, box-shadow;
+  transition-duration: 300ms;
+  width: 70px;
+  aspect-ratio: 1;
+
+  &:hover {
+    translate: 0 -3px;
+    box-shadow: 0 10px 15px light-dark(#00000080, #00b3ff80);
+  }
+
+  &:active {
+    translate: none;
+    box-shadow: none;
+  }
+
+  &:disabled {
+    translate: none;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,43 @@
+.list-log-screen-item {
+  width: 100%;
+  display: grid;
+  grid: none / 1fr auto;
+  align-items: center;
+  gap: 30px;
+  padding: 13px 20px;
+  border-radius: 100px;
+  background-color: light-dark(#eee, var(--sec-col1));
+  scroll-snap-align: center;
+
+  & > .title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: start;
+  }
+
+  & > svg {
+    font-size: 1.2rem;
+  }
+
+  &.loading {
+    background-color: var(--main-col2);
+    scale: 1.07;
+
+    & > svg {
+      animation: spinify infinite 1.25s linear;
+    }
+  }
+
+  &.done {
+    color: var(--main-col);
+  }
+
+  &.failed {
+    color: orangered;
+  }
+
+  &.none {
+    color: light-dark(#999, var(--sec-col5));
+  }
+}

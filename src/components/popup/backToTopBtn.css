@@ -1,0 +1,21 @@
+.back-to-top-btn {
+  border-radius: 100px;
+  position: fixed;
+  bottom: 100px;
+  right: 7px;
+  font-size: 2rem;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 200ms;
+  transition: 300ms;
+
+  &.visible {
+    visibility: visible;
+    opacity: 0.2;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}

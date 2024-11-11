@@ -1,0 +1,19 @@
+#themeSwitch {
+  position: relative;
+
+  & > .switch {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    padding-top: 3px;
+    border: none;
+    outline: none;
+    width: 30px;
+  }
+}
+
+@media (width <= 768px) {
+  #themeSwitch > .switch {
+    font-size: 1.25rem;
+  }
+}

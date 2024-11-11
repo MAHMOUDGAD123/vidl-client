@@ -1,0 +1,26 @@
+.downloads {
+  --format-width: 175px;
+
+  & > .title {
+    background-color: light-dark(#ccc, var(--sec-col1));
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+  }
+
+  & > .formats {
+    background-color: light-dark(#e1e1e1, var(--sec-col2));
+    padding: 15px;
+    display: grid;
+    grid: none / repeat(auto-fill, minmax(min(100%, var(--format-width)), 1fr));
+    gap: 10px;
+  }
+}
+
+@media (width <= 400px) {
+  .downloads {
+    --format-width: 75px;
+  }
+}

@@ -1,0 +1,26 @@
+.progress-screen {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 1.05rem;
+  animation: screen-blink infinite 1s ease-out alternate;
+}
+
+@keyframes screen-blink {
+  0% {
+    opacity: 0;
+  }
+  50%,
+  100% {
+    opacity: 0.65;
+  }
+}
+
+@media (width <= 500px) {
+  .progress-screen {
+    font-size: 0.9rem;
+  }
+}

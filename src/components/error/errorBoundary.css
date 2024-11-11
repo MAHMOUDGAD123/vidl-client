@@ -1,0 +1,57 @@
+.error-boundary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 50px;
+  font-weight: bold;
+
+  & > .icon {
+    font-size: 9rem;
+  }
+
+  & > .error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    &:has(.font-icon:hover) ~ .err-info {
+      opacity: 1;
+    }
+
+    & > .font-icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+
+  & > p {
+    opacity: 0.8;
+    font-size: 0.85rem;
+  }
+
+  & > .err-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    border-radius: var(--main-border-rad);
+    background-color: light-dark(#ddd, var(--sec-col1));
+    text-align: center;
+    opacity: 0;
+    transition: opacity var(--transition-ms);
+
+    & > :first-child {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    & > :last-child {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+  }
+}

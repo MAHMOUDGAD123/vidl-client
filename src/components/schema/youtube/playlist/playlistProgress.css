@@ -1,0 +1,17 @@
+.playlist-progress {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  translate: -50% -50%;
+  background-color: light-dark(#ddd, var(--sec-col2));
+  padding: 10px 15px;
+  border-radius: 0 0 var(--main-border-rad) var(--main-border-rad);
+  transition: translate 1s;
+  white-space: nowrap;
+  z-index: -1;
+  translate: -50% 95%;
+
+  &.show {
+    translate: -50% 95%;
+  }
+}

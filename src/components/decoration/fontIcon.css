@@ -1,0 +1,52 @@
+.font-icon {
+  position: relative;
+  transition: color 200ms;
+
+  &:is(:hover, :focus-within) {
+    color: var(--main-col);
+
+    & > .title {
+      display: flex;
+    }
+  }
+
+  & > .title {
+    font-family: "el-messiri";
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    border-radius: 100px;
+    background-color: var(--sec-col3);
+    z-index: 1;
+    font-size: 1rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+
+    &.bottom {
+      top: 120%;
+      left: 50%;
+      translate: -50% 0;
+    }
+
+    &.top {
+      bottom: 120%;
+      left: 50%;
+      translate: -50% 0;
+    }
+
+    &.left {
+      top: 50%;
+      right: 120%;
+      translate: 0 -50%;
+    }
+
+    &.right {
+      top: 50%;
+      left: 120%;
+      translate: 0 -50%;
+    }
+  }
+}

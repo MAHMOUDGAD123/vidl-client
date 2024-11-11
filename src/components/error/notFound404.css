@@ -1,0 +1,18 @@
+.not-found-404 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 50px;
+  font-weight: bold;
+
+  & > .icon {
+    font-size: 9rem;
+  }
+
+  & > p {
+    opacity: 0.8;
+    font-size: 0.85rem;
+  }
+}

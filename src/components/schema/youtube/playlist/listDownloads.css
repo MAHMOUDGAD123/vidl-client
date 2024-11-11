@@ -1,0 +1,15 @@
+.list-downloads {
+  display: grid;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  position: relative;
+  margin-top: 60px;
+  contain: layout;
+}
+
+@media (width <= 330px) {
+  .list-downloads {
+    margin-top: 105px;
+  }
+}

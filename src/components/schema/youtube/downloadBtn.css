@@ -1,0 +1,231 @@
+.download-btn {
+  position: relative;
+  height: 48px;
+  width: 48px;
+  border-radius: 100%;
+  background-color: light-dark(#ddd, var(--sec-col3));
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  appearance: none;
+  border: none;
+  outline: none;
+}
+
+.download-btn:after {
+  content: "";
+  position: relative;
+  display: block;
+  width: 200%;
+  height: 100%;
+  background-image: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0)
+  );
+  transform: translateX(-100%);
+}
+
+.download-btn svg {
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.download-btn svg#border {
+  position: absolute;
+  stroke: var(--sec-col5);
+  top: 0;
+  left: 0;
+  stroke: none;
+  transition: all 0.9s linear;
+}
+
+.download-btn svg#arrow {
+  position: absolute;
+  top: 14px;
+  left: 17px;
+  stroke: #9098a9;
+  transition: all 0.2s ease;
+}
+
+.download-btn svg#check {
+  position: absolute;
+  top: 17px;
+  left: 13px;
+  stroke: #fff;
+  transform: scale(0);
+}
+
+.download-btn svg#xcheck {
+  position: absolute;
+  transform: scale(0);
+  stroke: #fff;
+}
+.download-btn #xcheck path {
+  stroke-dasharray: 29;
+  stroke-dashoffset: 0;
+}
+
+.download-btn:hover {
+  background: rgba(0, 179, 255, 0.2);
+}
+
+.download-btn:hover #arrow path,
+.download-btn:hover #arrow polyline {
+  stroke: var(--main-col);
+}
+
+/* idle */
+.download-btn.idle #border {
+  stroke: var(--sec-col5);
+  stroke-dasharray: 10;
+  stroke-dashoffset: 0;
+  animation: stroke-spin infinite 1.5s linear;
+}
+.download-btn.idle:hover #border {
+  stroke: var(--main-col);
+  stroke-dasharray: 0;
+  animation: none;
+}
+
+/* wait */
+.download-btn.fetch #border {
+  stroke: var(--main-col);
+  stroke-dasharray: 10;
+  stroke-dashoffset: 0;
+  animation: stroke-spin infinite 0.65s linear;
+}
+.download-btn.fetch #arrow path,
+.download-btn.fetch #arrow polyline {
+  stroke: var(--main-col);
+}
+
+/* progress */
+.download-btn.progress #border {
+  stroke: var(--main-col);
+  stroke-dasharray: 144;
+}
+.download-btn.progress #arrow path,
+.download-btn.progress #arrow polyline {
+  animation: change-col infinite 1s ease-out alternate;
+}
+
+/* loading */
+.download-btn.load {
+  background: rgba(0, 179, 255, 0.2);
+}
+
+.download-btn.load #arrow path,
+.download-btn.load #arrow polyline {
+  stroke: var(--main-col);
+}
+
+.download-btn.load #border {
+  stroke: var(--main-col);
+  stroke-dasharray: 144;
+  stroke-dashoffset: 0;
+}
+
+/* done */
+.download-btn.done {
+  background: var(--main-col);
+  animation: rubberBand 0.8s;
+}
+
+.download-btn.done:after {
+  transform: translateX(50%);
+  transition: transform 0.4s ease;
+  transition-delay: 0.7s;
+}
+
+.download-btn.done #border,
+.download-btn.done #arrow,
+.download-btn.done #xcheck {
+  display: none;
+}
+
+.download-btn.done #check {
+  transform: scale(1);
+  transition: all 0.2s ease;
+  transition-delay: 0.2s;
+}
+
+/* error */
+.download-btn.error {
+  background: var(--main-col);
+  animation: rubberBand 0.8s;
+}
+
+.download-btn.error:after {
+  transform: translateX(50%);
+  transition: transform 0.4s ease;
+  transition-delay: 0.7s;
+}
+
+.download-btn.error #border,
+.download-btn.error #arrow,
+.download-btn.error #check {
+  display: none;
+}
+
+.download-btn.error #xcheck {
+  display: block;
+  transform: scale(1);
+  transition: all 0.2s ease;
+  transition-delay: 0.2s;
+}
+
+@keyframes change-col {
+  to {
+    stroke: var(--main-col);
+  }
+}
+
+@keyframes stroke-spin {
+  to {
+    stroke-dashoffset: 100;
+  }
+}
+
+@keyframes jump {
+  from {
+    translate: 0 3px;
+  }
+  to {
+    translate: 0 -3px;
+  }
+}
+
+@keyframes loading {
+  to {
+    stroke-dasharray: 144;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes rubberBand {
+  from {
+    transform: scale(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.15, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.15, 1);
+  }
+  50% {
+    transform: scale3d(1.1, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}

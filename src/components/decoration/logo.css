@@ -1,0 +1,58 @@
+#logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 2.75rem;
+  background-image: linear-gradient(var(--main-col), var(--main-col));
+  background-repeat: no-repeat;
+  background-size: 0 100%, 100%;
+  transition: background-size var(--transition-ms);
+  background-clip: text;
+  color: transparent;
+  margin-right: auto;
+  white-space: nowrap;
+  outline: none;
+  border: none;
+
+  & > .logo-icon {
+    color: light-dark(var(--ligt-text-col), var(--drk-text-col));
+    transition-property: color, rotate;
+    transition-duration: var(--transition-ms);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      transition-property: left;
+      transition-duration: inherit;
+      position: absolute;
+      width: 65%;
+      aspect-ratio: 1;
+      background-color: var(--main-bg-col);
+      top: 45%;
+      translate: -50% -50%;
+      rotate: z 45deg;
+      left: -50%;
+      z-index: 1;
+    }
+  }
+
+  &:is(:focus-visible, :hover) {
+    background-size: 100% 100%, 100%;
+
+    & > .logo-icon {
+      color: var(--main-col);
+      rotate: 90deg;
+
+      &::before {
+        left: 0;
+      }
+    }
+  }
+}
+
+@media (width <= 640px) {
+  #logo {
+    font-size: 2.5rem;
+  }
+}

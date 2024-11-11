@@ -1,0 +1,19 @@
+header {
+  padding: 20px var(--contianer-padding);
+  display: flex;
+  align-items: center;
+  font-weight: bolder;
+  gap: 25px;
+  user-select: none;
+  position: sticky;
+  top: 0;
+  transition: background-color var(--transition-ms);
+  z-index: 100;
+
+  &.scroll-down {
+    background-color: light-dark(
+      var(--header-ligt-bg-col),
+      var(--header-drk-bg-col)
+    );
+  }
+}

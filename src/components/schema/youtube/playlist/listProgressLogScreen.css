@@ -1,0 +1,25 @@
+.list-progress-log-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: light-dark(#ddd, var(--sec-col2));
+  border-radius: var(--main-border-rad);
+  overflow-y: auto;
+  font-family: monospace;
+  font-size: 1rem;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  width: 100%;
+  max-width: 650px;
+  height: 0;
+  transition-property: height, padding-block;
+  transition-duration: 1s;
+  padding-inline: 25px;
+  padding-block: 0;
+  overflow-y: auto;
+
+  &.show {
+    height: 200px;
+    padding-block: 25px;
+  }
+}

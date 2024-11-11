@@ -1,0 +1,125 @@
+.playlist-item {
+  display: grid;
+  grid: 1fr / auto auto 1fr;
+  align-items: center;
+  gap: 15px;
+  background-color: light-dark(#ccc, var(--sec-col1));
+  padding: 13px;
+  border-radius: inherit;
+  position: relative;
+  font-weight: bold;
+
+  & > .checkbox-wrapper {
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 23px;
+    aspect-ratio: 1;
+    position: relative;
+    transition: 200ms;
+    cursor: pointer;
+    background-color: light-dark(#fff, var(--sec-col3));
+    font-size: 1.5rem;
+
+    & > input[type="checkbox"] {
+      appearance: none;
+      width: 100%;
+      aspect-ratio: 1;
+      cursor: pointer;
+      z-index: 1;
+      border-radius: 100px;
+
+      & + .check {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        animation: shrink 300ms ease-in-out forwards;
+        color: var(--main-col);
+      }
+
+      &:checked + .check {
+        animation: grow 300ms ease-in-out forwards;
+        display: unset;
+      }
+    }
+  }
+
+  & > .thumbnail {
+    border-radius: inherit;
+    position: relative;
+    width: fit-content;
+
+    & > img {
+      width: 170px;
+      min-width: 90px;
+      border-radius: inherit;
+    }
+
+    & > .duration {
+      position: absolute;
+      bottom: 7px;
+      right: 7px;
+      color: #fff;
+      background-color: var(--sec-col3);
+      padding: 5px;
+      border-radius: 7px;
+      font-size: 0.75rem;
+    }
+  }
+
+  & > .video-details {
+    font-size: 0.85rem;
+    text-align: left;
+    display: grid;
+    place-self: start;
+    font-family: monospace;
+
+    & > .counter {
+      color: var(--main-col);
+      font-size: 1rem;
+    }
+
+    & > .title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      margin-bottom: 5px;
+      font-size: 0.95rem;
+    }
+
+    & > .more-info {
+      display: grid;
+      gap: 3px;
+      overflow: hidden;
+
+      & > * {
+        opacity: 0.6;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+@media (width <= 650px) {
+  .playlist-item {
+    grid: auto 1fr / 1fr;
+
+    & > .checkbox-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      translate: -25% -25%;
+    }
+
+    & > .thumbnail {
+      place-self: center;
+    }
+  }
+}

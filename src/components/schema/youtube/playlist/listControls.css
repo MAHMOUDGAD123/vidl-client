@@ -1,0 +1,141 @@
+.list-controls {
+  border-radius: var(--main-border-rad) var(--main-border-rad) 0 0;
+  background-color: light-dark(#e1e1e1, var(--sec-col2));
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 15px 20px;
+  width: fit-content;
+  max-width: 500px;
+  place-self: center;
+  position: absolute;
+  top: -60px;
+  --bg-col: light-dark(#fff, #000);
+  --padding: 7px;
+
+  & > * {
+    width: 90px;
+    cursor: pointer;
+    transition: 200ms;
+    border-radius: 100px;
+    font-size: 1rem;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 0 0 2px var(--main-col) inset;
+      z-index: 1;
+      border-radius: 100px;
+      pointer-events: none;
+      transition: background-color 200ms;
+    }
+  }
+
+  & > .select-all {
+    position: relative;
+    contain: layout;
+    overflow: hidden;
+    padding: var(--padding);
+    background-color: var(--bg-col);
+
+    &:has(input[type="checkbox"]:checked)::before {
+      rotate: none;
+    }
+
+    & > input[type="checkbox"] {
+      appearance: none;
+      background-color: transparent;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      width: 100%;
+      height: 100%;
+      background-color: var(--main-col);
+      border-radius: inherit;
+      rotate: y 90deg;
+      transform-origin: left;
+      transition: rotate 500ms;
+      z-index: -1;
+    }
+  }
+
+  & > .quality-selector {
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 40%;
+      right: 5%;
+      translate: -50%;
+      border: 7px solid transparent;
+      border-top-color: var(--main-col);
+      z-index: 1;
+      pointer-events: none;
+      transition: background-color 200ms;
+    }
+
+    & > select {
+      font-family: inherit;
+      /* font-weight: bold; */
+      border: none;
+      outline: none;
+      appearance: none;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: var(--padding);
+      padding-left: 15px;
+      font-size: 1rem;
+      border-radius: inherit;
+      cursor: pointer;
+      background-color: var(--bg-col);
+
+      & > optgroup {
+        background-color: light-dark(#ddd, var(--sec-col2));
+        color: var(--main-col);
+
+        & > option {
+          background-color: light-dark(#eee, var(--sec-col1));
+          color: light-dark(#000, #fff);
+
+          &:checked {
+            background-color: var(--main-col);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (width <= 330px) {
+  .list-controls {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    top: -110px;
+  }
+}

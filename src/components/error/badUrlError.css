@@ -1,0 +1,27 @@
+.bad-url-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-weight: bold;
+  background-color: light-dark(#ccc, var(--sec-col2));
+  padding: 20px;
+  border-radius: var(--main-border-rad);
+  opacity: 1;
+  animation: blink 700ms 4 ease-in-out alternate;
+
+  & > .icon {
+    font-size: 1.5rem;
+  }
+
+  & > p {
+    opacity: 0.85;
+  }
+}
+
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
+}

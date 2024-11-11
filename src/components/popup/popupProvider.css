@@ -1,0 +1,5 @@
+.popup-holder {
+  &:has(.popup.show-up) .popup-toggle {
+    color: var(--main-col);
+  }
+}
