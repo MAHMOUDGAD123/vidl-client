@@ -11,7 +11,9 @@ import { startProgressInterval, stopProgressInterval } from "./helpers";
 const openYoutubeDownloadSession = async (
   progressDispatch: React.Dispatch<yt.Progress.ProgressStateAction>
 ): Promise<boolean> => {
-  const apiUrl = "http://localhost:3000/api/ods";
+  const apiUrl = import.meta.env.DEV
+    ? "http://localhost:3000/api/ods"
+    : "https://vidl-api.vercel.app/api/ods";
 
   try {
     const response = await axios.get(apiUrl, {
@@ -57,9 +59,17 @@ const youtubeVideoDownloader = async (
           // only start if session is opened
           const { isVideo, choice } = UserChoice;
 
-          const apiUrl = isVideo
-            ? "http://localhost:3000/api/youtube/video-download"
-            : "http://localhost:3000/api/youtube/audio-download";
+          let apiUrl;
+
+          if (import.meta.env.DEV) {
+            apiUrl = isVideo
+              ? "http://localhost:3000/api/youtube/video-download"
+              : "http://localhost:3000/api/youtube/audio-download";
+          } else {
+            apiUrl = isVideo
+              ? "https://vidl-api.vercel.app/api/youtube/video-download"
+              : "https://vidl-api.vercel.app/api/youtube/audio-download";
+          }
 
           const requestData = { searchUrl: videoUrl, quality: choice };
 

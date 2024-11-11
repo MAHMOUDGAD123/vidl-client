@@ -15,7 +15,9 @@ export const youtubeSearchAction = async ({
     return { error: true, errMsg: "Please, enter a youtube url" };
   }
 
-  const apiUrl = `http://localhost:3000/api/youtube/smart-search`;
+  const apiUrl = import.meta.env.DEV
+    ? `http://localhost:3000/api/youtube/smart-search`
+    : "https://vidl-api.vercel.app/api/youtube/smart-search";
 
   // if the server fail with (500) <ErrorBoundary> will be activated
   const response = await axios.post<yt.Search.SearchServerResponse>(

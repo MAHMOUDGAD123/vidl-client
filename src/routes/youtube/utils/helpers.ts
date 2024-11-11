@@ -197,7 +197,9 @@ export const startProgressInterval = (
   }
 
   const intervID = setInterval(async () => {
-    const apiUrl = "http://localhost:3000/api/youtube/progress-info";
+    const apiUrl = import.meta.env.DEV
+      ? "http://localhost:3000/api/youtube/progress-info"
+      : "https://vidl-api.vercel.app//api/youtube/progress-info";
 
     try {
       const response = await axios.get<yt.Progress.ProgressApiResponse>(
