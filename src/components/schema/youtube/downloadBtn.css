@@ -83,7 +83,7 @@
   stroke: var(--sec-col5);
   stroke-dasharray: 10;
   stroke-dashoffset: 0;
-  animation: stroke-spin infinite 1.5s linear;
+  animation: spinify 2s infinite linear;
 }
 .download-btn.idle:hover #border {
   stroke: var(--main-col);

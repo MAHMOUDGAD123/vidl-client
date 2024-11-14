@@ -3,7 +3,10 @@ import { useContext, useEffect, useRef } from "react";
 import type { yt } from "../../../../../public/types/youtube-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
-import { ListDownloadRequestInfoContext } from "../../../../routes/youtube/utils/contexts";
+import {
+  ListDownloadRequestInfoContext,
+  ProgressDownloadedFilesContext,
+} from "../../../../routes/youtube/utils/contexts";
 
 interface PlaylistProps {
   video: yt.Search.Video;
@@ -16,12 +19,18 @@ const PlaylistItem = ({ video, counter, index }: PlaylistProps) => {
   const listDownloadRequestInfoContext = useContext(
     ListDownloadRequestInfoContext
   )!;
+  const progressDownloadedFilesContext = useContext(
+    ProgressDownloadedFilesContext
+  )!;
 
   useEffect(() => {
     const indicesListHasIt =
       listDownloadRequestInfoContext.data.indicesList.has(index);
 
     checkboxEle.current!.checked = indicesListHasIt;
+    progressDownloadedFilesContext.updateListDownloadFilesProgress(
+      (current) => ({ ...current, downloaded: 0 })
+    );
 
     if (import.meta.env.DEV) {
       console.log(`item ${index + 1} ${indicesListHasIt ? "🟩" : "🟥"}`);

@@ -1,10 +1,7 @@
 import "./listProgressLogScreen.css";
 import { yt } from "../../../../../public/types/youtube-types";
 import ListLogScreenItem from "./ListLogScreenItem";
-import {
-  ListDownloadRequestInfoContext,
-  ProgressDownloadedFilesContext,
-} from "../../../../routes/youtube/utils/contexts";
+import { ProgressDownloadedFilesContext } from "../../../../routes/youtube/utils/contexts";
 import { useContext } from "react";
 
 interface ListProgressLogScreenProps {
@@ -16,12 +13,9 @@ const ListProgressLogScreen = ({ videos }: ListProgressLogScreenProps) => {
     ProgressDownloadedFilesContext
   )!;
 
-  const { data } = useContext(ListDownloadRequestInfoContext)!;
-
   const showUp =
     listDownloadFilesProgress.listlogScreenState.length > 0 &&
-    listDownloadFilesProgress.show &&
-    data.indicesList.size > 0
+    listDownloadFilesProgress.show
       ? " show"
       : "";
 
