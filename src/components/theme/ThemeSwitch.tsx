@@ -4,7 +4,6 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef, useLayoutEffect } from "react";
 import { useStateLs } from "../../../public/hooks/useStateLs";
-import FontIcon from "../decoration/FontIcon";
 import DropMenu from "../popup/DropMenu";
 import PopupProvider from "../popup/PopupProvider";
 
@@ -48,7 +47,7 @@ const ThemeSwitch = () => {
     <PopupProvider>
       <div id="themeSwitch">
         <div className="switch popup-toggle">
-          <FontIcon icon={currentThemeIcon.current} />
+          <FontAwesomeIcon icon={currentThemeIcon.current} />
         </div>
 
         <DropMenu>
@@ -61,6 +60,7 @@ const ThemeSwitch = () => {
             <FontAwesomeIcon icon={faSun} />
             <span>light</span>
           </div>
+
           <div
             key="dark"
             className="theme-opt"
@@ -70,6 +70,7 @@ const ThemeSwitch = () => {
             <FontAwesomeIcon icon={faMoon} />
             <span>dark</span>
           </div>
+
           <div
             key="system"
             className="theme-opt"

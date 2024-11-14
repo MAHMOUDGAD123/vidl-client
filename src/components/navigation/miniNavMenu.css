@@ -14,7 +14,7 @@
 
   /* remove the hover effect from font-icon element */
   & > .drop-menu > a > .font-icon:hover {
-    color: inherit;
+    /* color: inherit; */
   }
 
   & .title.left {

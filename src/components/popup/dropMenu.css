@@ -8,12 +8,14 @@
   top: 150%;
   left: 50%;
   translate: -50% 0;
-  rotate: x -90deg;
   transform-origin: top;
-  transition: rotate 100ms 100ms;
   background-color: light-dark(#fff, var(--sec-col2));
   color: light-dark(var(--ligt-text-col), var(--drk-text-col));
   box-shadow: 0 5px 10px 1px #0007;
+  transition-property: visibility, opacity;
+  transition-duration: 250ms;
+  opacity: 0;
+  visibility: hidden;
 
   & > * {
     display: flex;
@@ -39,6 +41,16 @@
   }
 
   &.show-up {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes show-menu {
+  from {
+    rotate: x -90deg;
+  }
+  to {
     rotate: none;
   }
 }

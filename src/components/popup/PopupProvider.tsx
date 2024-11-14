@@ -4,7 +4,7 @@ interface PopupProps {
   children: React.ReactNode | React.ReactNode[];
 }
 
-const PopupHolder = ({ children }: PopupProps) => {
+const PopupProvider = ({ children }: PopupProps) => {
   const onClickHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const ele = e.target as HTMLDivElement;
     if (ele.closest(".popup-toggle")) {
@@ -28,4 +28,4 @@ const PopupHolder = ({ children }: PopupProps) => {
   );
 };
 
-export default PopupHolder;
+export default PopupProvider;
