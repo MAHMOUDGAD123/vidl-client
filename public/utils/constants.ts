@@ -20,3 +20,13 @@ export const linkIcons = [
  * @info 144 -> progress (0%)
  */
 export const $progressMax = 144;
+
+/** used with download handlers */
+export const statusCode_errorMsg = new Map([
+  [201, "invalid video url"],
+  [202, "session folder doesn't exists"],
+  [203, "failed to read session info"],
+  [204, "failed to save session info"],
+  [205, "failed to download files"],
+  [206, "faild to open a download session"],
+]);

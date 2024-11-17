@@ -1,40 +1,48 @@
 import axios, { AxiosError } from "axios";
 import { download } from "../../../../public/utils/tools";
 import type { yt } from "../../../../public/types/youtube-types";
+import { startProgressInterval, stopProgressInterval } from "./helpers";
 import type {
   ListDownloadFilesProgress,
   ListLogScreenItemState,
   UserChoice,
 } from "./contexts";
-import { startProgressInterval, stopProgressInterval } from "./helpers";
 
 const openYoutubeDownloadSession = async (
   progressDispatch: React.Dispatch<yt.Progress.ProgressStateAction>
-): Promise<boolean> => {
+): Promise<{ success: boolean; sessionID?: string }> => {
   const apiUrl = import.meta.env.DEV
     ? "http://localhost:3000/api/ods"
     : "https://vidl-api.vercel.app/api/ods";
 
+  let sessionID = "";
+
   try {
-    const response = await axios.get(apiUrl, {
-      withCredentials: true,
-      responseType: "json",
-    });
+    const response = await axios.get<yt.Progress.OpenDownloadSessionResponse>(
+      apiUrl,
+      {
+        withCredentials: true,
+        responseType: "json",
+      }
+    );
 
     if (response.status !== 200) {
-      throw new AxiosError("Faild to open a download session ❌");
+      throw new AxiosError("faild to open a download session 🟥");
     }
 
-    progressDispatch(response.data);
+    sessionID = response.data.sessionID;
+    const { progressInfo } = response.data;
+
+    progressDispatch(progressInfo);
   } catch (err) {
     progressDispatch({
       state: "error",
       msg: (err as AxiosError).message,
     });
 
-    return false;
+    return { success: false };
   }
-  return true;
+  return { success: true, sessionID };
 };
 
 const youtubeVideoDownloader = async (
@@ -46,18 +54,19 @@ const youtubeVideoDownloader = async (
   return new Promise((resolve) => {
     // open download session first
     openYoutubeDownloadSession(progressDispatch)
-      .then((success) => {
-        if (!success) {
+      .then((sessionState) => {
+        if (!sessionState.success) {
           if (import.meta.env.DEV) {
-            console.log("failed to open session ❓");
+            console.log("failed to open session 🟥");
           }
           resolve(false);
         } else {
           if (import.meta.env.DEV) {
-            console.log("session opened ✅");
+            console.log("session opened 🟩");
           }
           // only start if session is opened
           const { isVideo, choice } = UserChoice;
+          const sessionID = sessionState.sessionID!;
 
           let apiUrl;
 
@@ -71,9 +80,13 @@ const youtubeVideoDownloader = async (
               : "https://vidl-api.vercel.app/api/youtube/audio-download";
           }
 
-          const requestData = { searchUrl: videoUrl, quality: choice };
+          const requestData: yt.Progress.DownloadFileRequest = {
+            searchUrl: videoUrl,
+            quality: choice,
+            sessionID,
+          };
 
-          const intervalId = startProgressInterval(progressDispatch); // watch the server progress
+          const intervalId = startProgressInterval(progressDispatch, sessionID); // watch the server progress
 
           axios
             .post(apiUrl, requestData, {
@@ -124,9 +137,9 @@ export const youtubeVideoDownloadHandler = async (
 
   if (import.meta.env.DEV) {
     if (done) {
-      console.log("file downloaded successfully ✅");
+      console.log("file downloaded successfully 🟩");
     } else {
-      console.log("download failed ❌");
+      console.log("download failed 🟥");
     }
   }
 
@@ -167,7 +180,7 @@ export const youtubeListDownloadHandler = async (
     });
   } else {
     if (import.meta.env.DEV) {
-      console.log("Start Downloading...");
+      console.log("Start Downloading...🔃");
     }
 
     // initialize all & put all items in the (none) state & show components

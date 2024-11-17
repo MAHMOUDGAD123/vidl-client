@@ -174,6 +174,11 @@ export namespace yt {
   namespace Progress {
     type BtnStyleClass = "idle" | "fetch" | "progress" | "done" | "error";
 
+    type OpenDownloadSessionResponse = {
+      sessionID: string;
+      progressInfo: ProgressApiResponse;
+    };
+
     type ProgressState = {
       $progress: number; // percentage
       btnStyleClass: BtnStyleClass;
@@ -190,6 +195,12 @@ export namespace yt {
       state: BtnStyleClass;
       msg?: string;
       progress?: number;
+    };
+
+    type DownloadFileRequest = {
+      searchUrl: string;
+      quality: number;
+      sessionID: string;
     };
   }
   // ----------------------------- Progress End -----------------------------------

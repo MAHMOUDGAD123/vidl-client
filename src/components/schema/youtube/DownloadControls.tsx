@@ -57,6 +57,7 @@ const reducer = (
     }
 
     default: {
+      console.log(action);
       throw new Error("Unknown action state ❓");
     }
   }

@@ -190,10 +190,11 @@ export const getStoredUserChoiceData = () => {
 
 // progress
 export const startProgressInterval = (
-  progressDispatch: React.Dispatch<yt.Progress.ProgressStateAction>
+  progressDispatch: React.Dispatch<yt.Progress.ProgressStateAction>,
+  sessionID: string
 ) => {
   if (import.meta.env.DEV) {
-    console.log("Progress interval start");
+    console.log("Progress interval start 🟩");
   }
 
   const intervID = setInterval(async () => {
@@ -202,8 +203,10 @@ export const startProgressInterval = (
       : "https://vidl-api.vercel.app//api/youtube/progress-info";
 
     try {
-      const response = await axios.get<yt.Progress.ProgressApiResponse>(
+      const requestData = { sessionID };
+      const response = await axios.post<yt.Progress.ProgressApiResponse>(
         apiUrl,
+        requestData,
         {
           withCredentials: true,
           responseType: "json",
@@ -240,7 +243,7 @@ export const stopProgressInterval = (
   });
 
   if (import.meta.env.DEV) {
-    console.log("Progress interval stop");
+    console.log("Progress interval stop 🟩");
   }
 };
 
