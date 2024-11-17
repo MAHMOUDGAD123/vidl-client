@@ -28,7 +28,7 @@ const reducer = (
     actionState !== "done" &&
     actionState !== "idle" &&
     actionState === "error" &&
-    currentBtnState === "error"
+    (currentBtnState === "done" || currentBtnState === "error")
   ) {
     return state;
   }
