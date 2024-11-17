@@ -96,7 +96,7 @@
   stroke: var(--main-col);
   stroke-dasharray: 10;
   stroke-dashoffset: 0;
-  animation: stroke-spin infinite 0.65s linear;
+  animation: spinify 0.75s infinite linear;
 }
 .download-btn.fetch #arrow path,
 .download-btn.fetch #arrow polyline {
