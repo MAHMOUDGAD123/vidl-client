@@ -96,6 +96,7 @@ const youtubeVideoDownloader = async (
             .then((response) => {
               if (response.status !== 200) {
                 resolve(false);
+                return;
               }
 
               const fileName = `${videoTitle}.${isVideo ? "mp4" : "mp3"}`;
