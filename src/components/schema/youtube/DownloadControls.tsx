@@ -25,10 +25,11 @@ const reducer = (
    * [2]_client bad internet connection_
    */
   if (
+    currentBtnState !== "done" &&
     actionState !== "idle" &&
     actionState !== "done" &&
     actionState === "error" &&
-    (currentBtnState === "done" || currentBtnState === "error")
+    currentBtnState === "error"
   ) {
     return state;
   }
@@ -57,8 +58,7 @@ const reducer = (
     }
 
     default: {
-      console.log(action);
-      throw new Error("Unknown action state ❓");
+      throw new Error(`Unknown action state ❓-> (${action.state})`);
     }
   }
 };
