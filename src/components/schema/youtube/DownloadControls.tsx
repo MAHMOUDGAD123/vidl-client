@@ -25,9 +25,8 @@ const reducer = (
    * [2]_client bad internet connection_
    */
   if (
-    currentBtnState !== "done" &&
-    actionState !== "idle" &&
     actionState !== "done" &&
+    actionState !== "idle" &&
     actionState === "error" &&
     currentBtnState === "error"
   ) {
