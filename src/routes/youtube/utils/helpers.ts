@@ -200,7 +200,7 @@ export const startProgressInterval = (
   const intervID = setInterval(async () => {
     const apiUrl = import.meta.env.DEV
       ? "http://localhost:3000/api/youtube/progress-info"
-      : "https://vidl-api.vercel.app//api/youtube/progress-info";
+      : "https://vidl-api.vercel.app/api/youtube/progress-info";
 
     try {
       const requestData = { sessionID };
