@@ -1,5 +1,5 @@
 import axios, { AxiosError } from "axios";
-import { yt, ytdl } from "../../../../public/types/youtube-types";
+import { yt, ytdl } from "@_types/youtube-types";
 import { UserChoice } from "./contexts";
 
 /**

@@ -1,7 +1,7 @@
 import "./listProgressLogScreen.css";
-import { yt } from "../../../../../public/types/youtube-types";
+import { yt } from "@_types/youtube-types";
 import ListLogScreenItem from "./ListLogScreenItem";
-import { ProgressDownloadedFilesContext } from "../../../../routes/youtube/utils/contexts";
+import { ProgressDownloadedFilesContext } from "@_routes/youtube/utils/contexts";
 import { useContext } from "react";
 
 interface ListProgressLogScreenProps {

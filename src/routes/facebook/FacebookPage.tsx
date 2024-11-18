@@ -1,5 +1,5 @@
-// import InputForm from "../components/InputForm";
-import Page from "../../components/layout/Page";
+// import InputForm from "@_components/InputForm";
+import Page from "@_components/layout/Page";
 
 const FacebookPage = () => {
   return (

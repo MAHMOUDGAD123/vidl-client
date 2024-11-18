@@ -4,7 +4,7 @@ import {
   defaultChoice,
   ListDownloadRequestInfoContext,
   UserChoiceContext,
-} from "../../../../routes/youtube/utils/contexts";
+} from "@_routes/youtube/utils/contexts";
 
 const ListControls = () => {
   const selectAllEle = useRef<HTMLInputElement>(null);

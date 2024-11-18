@@ -4,17 +4,19 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import RootLayout from "./components/layout/RootLayout";
+// components
+import RootLayout from "@_components/layout/RootLayout";
+import ErrorBoundary from "@_components/error/ErrorBoundary";
+import NotFound404 from "@_components/error/NotFound404";
+import SearchResultRouter from "@_components/schema/SearchResultRouter";
+// routes
 import YoutubePage from "./routes/youtube/YoutubePage";
 import FacebookPage from "./routes/facebook/FacebookPage";
 import XPage from "./routes/x/XPage";
 import InstagramPage from "./routes/instagram/InstagramPage";
 import TiktokPage from "./routes/tiktok/TiktokPage";
 import HomePage from "./routes/HomePage";
-import ErrorBoundary from "./components/error/ErrorBoundary";
-import NotFound404 from "./components/error/NotFound404";
 import { youtubeSearchAction } from "./routes/youtube/utils/actions";
-import SearchResultRouter from "./components/schema/SearchResultRouter";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

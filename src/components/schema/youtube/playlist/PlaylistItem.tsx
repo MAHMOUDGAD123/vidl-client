@@ -1,12 +1,12 @@
 import "./playlistItem.css";
 import { useContext, useEffect, useRef } from "react";
-import type { yt } from "../../../../../public/types/youtube-types";
+import type { yt } from "@_types/youtube-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import {
   ListDownloadRequestInfoContext,
   ProgressDownloadedFilesContext,
-} from "../../../../routes/youtube/utils/contexts";
+} from "@_routes/youtube/utils/contexts";
 
 interface PlaylistProps {
   video: yt.Search.Video;

@@ -1,5 +1,5 @@
 import "./footer.css";
-import { linkIcons } from "../../../public/utils/constants";
+import { linkIcons } from "@_utils/constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {

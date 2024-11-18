@@ -1,6 +1,6 @@
 import "./youtubeListSchema.css";
 import { useCallback, useState } from "react";
-import type { yt } from "../../../../../public/types/youtube-types";
+import type { yt } from "@_types/youtube-types";
 import YoutubeListInfo from "./YoutubeListInfo";
 import DownloadControls from "../DownloadControls";
 import YoutubeUserChoiceContext from "../YoutubeUserChoiceContext";
@@ -13,7 +13,7 @@ import {
   ListDownloadRequestInfoContext,
   ListDownloadFilesProgress,
   ProgressDownloadedFilesContext,
-} from "../../../../routes/youtube/utils/contexts";
+} from "@_routes/youtube/utils/contexts";
 
 interface YoutubeListSchemaProps {
   data: yt.Search.ListInfo;

@@ -3,9 +3,9 @@ import { faDesktop, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef, useLayoutEffect } from "react";
-import { useStateLs } from "../../../public/hooks/useStateLs";
-import DropMenu from "../popup/DropMenu";
-import PopupProvider from "../popup/PopupProvider";
+import { useStateLs } from "@_hooks/useStateLs";
+import DropMenu from "@_components/popup/DropMenu";
+import PopupProvider from "@_components/popup/PopupProvider";
 
 type ThemeCode = 1 | 2 | 3;
 type Theme = "light" | "dark" | "light dark";

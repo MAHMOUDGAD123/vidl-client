@@ -6,13 +6,10 @@ import {
   faListUl,
   faRectangleList,
 } from "@fortawesome/free-solid-svg-icons";
-import type { yt } from "../../../../../public/types/youtube-types";
-import FontIcon from "../../../decoration/FontIcon";
+import type { yt } from "@_types/youtube-types";
+import FontIcon from "@_components/decoration/FontIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  frmtUploadDate,
-  frmtViews,
-} from "../../../../routes/youtube/utils/helpers";
+import { frmtUploadDate, frmtViews } from "@_routes/youtube/utils/helpers";
 
 interface ListInfoProps {
   listDetails: yt.Search.ListInfo;

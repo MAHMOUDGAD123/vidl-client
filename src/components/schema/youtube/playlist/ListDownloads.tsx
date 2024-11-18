@@ -1,5 +1,5 @@
 import "./listDownloads.css";
-import type { yt } from "../../../../../public/types/youtube-types";
+import type { yt } from "@_types/youtube-types";
 import ListControls from "./ListControls";
 import Playlist from "./Playlist";
 

@@ -1,7 +1,7 @@
 import "./playlist.css";
-import type { yt } from "../../../../../public/types/youtube-types";
+import type { yt } from "@_types/youtube-types";
 import PlaylistItem from "./PlaylistItem";
-import BackToTopBtn from "../../../popup/BackToTopBtn";
+import BackToTopBtn from "@_components/popup/BackToTopBtn";
 import { useRef } from "react";
 
 interface PlaylistProps {

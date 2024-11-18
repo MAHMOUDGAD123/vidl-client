@@ -1,9 +1,9 @@
-import { useStateLs } from "../../../../public/hooks/useStateLs";
+import { useStateLs } from "@_hooks/useStateLs";
 import {
   type UserChoice,
   defaultChoice,
   UserChoiceContext,
-} from "../../../routes/youtube/utils/contexts";
+} from "@_routes/youtube/utils/contexts";
 
 interface YoutubeUserChoiceContextProps {
   children: React.ReactNode | React.ReactNode[];

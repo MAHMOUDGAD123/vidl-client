@@ -1,6 +1,6 @@
 import axios, { AxiosError } from "axios";
-import { download } from "../../../../public/utils/tools";
-import type { yt } from "../../../../public/types/youtube-types";
+import { download } from "@_utils/tools";
+import type { yt } from "@_types/youtube-types";
 import { startProgressInterval, stopProgressInterval } from "./helpers";
 import type {
   ListDownloadFilesProgress,

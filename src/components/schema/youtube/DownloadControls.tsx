@@ -2,9 +2,9 @@ import "./downloadControls.css";
 import { useReducer } from "react";
 import DownloadBtn from "./DownloadBtn";
 import ProgressScreen from "./ProgressScreen";
-import { $progressMax } from "../../../../public/utils/constants";
-import type { yt } from "../../../../public/types/youtube-types";
-import type { ProviderType } from "../../../../public/types/globals";
+import { $progressMax } from "@_utils/constants";
+import type { yt } from "@_types/youtube-types";
+import type { ProviderType } from "@_types/globals";
 
 const progressInitialState: yt.Progress.ProgressState = {
   $progress: 0,

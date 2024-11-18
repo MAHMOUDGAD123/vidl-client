@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import type { yt } from "../../../../public/types/youtube-types";
+import type { yt } from "@_types/youtube-types";
 
 // ===============================================================
 

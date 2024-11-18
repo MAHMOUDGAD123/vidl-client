@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { yt } from "../../../../public/types/youtube-types";
+import type { yt } from "@_types/youtube-types";
 
 interface YoutubeSearchActionProps {
   request: Request;

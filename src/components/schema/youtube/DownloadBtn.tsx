@@ -1,17 +1,17 @@
 import "./downloadBtn.css";
 import { useContext } from "react";
-import type { yt } from "../../../../public/types/youtube-types";
-import type { ProviderType } from "../../../../public/types/globals";
+import type { yt } from "@_types/youtube-types";
+import type { ProviderType } from "@_types/globals";
 import {
   ProgressDownloadedFilesContext,
   UserChoice,
   UserChoiceContext,
-} from "../../../routes/youtube/utils/contexts";
+} from "@_routes/youtube/utils/contexts";
 // handlers
 import {
   youtubeListDownloadHandler,
   youtubeVideoDownloadHandler,
-} from "../../../routes/youtube/utils/handlers";
+} from "@_routes/youtube/utils/handlers";
 
 type ProviderHandlerFunction = (
   event: React.MouseEvent<HTMLButtonElement, MouseEvent>,

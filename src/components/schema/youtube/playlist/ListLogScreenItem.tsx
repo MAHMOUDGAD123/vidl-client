@@ -1,5 +1,5 @@
 import "./listLogScreenItem.css";
-import { ListLogScreenItemState } from "../../../../routes/youtube/utils/contexts";
+import { ListLogScreenItemState } from "@_routes/youtube/utils/contexts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCheck,

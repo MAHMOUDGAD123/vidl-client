@@ -13,6 +13,17 @@
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
+    "baseUrl": "./",
+    "paths": {
+      "@_types/*": ["public/types/*"],
+      "@_utils/*": ["public/utils/*"],
+      "@_fonts/*": ["public/fonts/*"],
+      "@_hooks/*": ["public/hooks/*"],
+      "@_imgs/*": ["public/imgs/*"],
+      "@_test/*": ["public/test/*"],
+      "@_routes/*": ["src/routes/*"],
+      "@_components/*": ["src/components/*"]
+    },
 
     /* Linting */
     "strict": true,
@@ -20,5 +31,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src/**/*"]
 }

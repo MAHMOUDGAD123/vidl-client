@@ -1,11 +1,7 @@
 import "./searchResultRouter.css";
 import { useEffect, useRef } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import type {
-  LocationState,
-  SchemaId,
-  SchemaType,
-} from "../../../public/types/globals";
+import type { LocationState, SchemaId, SchemaType } from "@_types/globals";
 // schemas
 import YoutubeVideoSchema from "./youtube/video/YoutubeVideoSchema";
 import YoutubeListSchema from "./youtube/playlist/YoutubeListSchema";
