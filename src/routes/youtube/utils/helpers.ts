@@ -36,6 +36,13 @@ export const frmtVideoDuration = (
   return { durationText, days, hrs, mins, secs };
 };
 
+/** get the playlist total duration to the form of (hours : minutes : seconds) */
+export const getPlaylistTotalDuration = (videos: yt.Search.Video[]) => {
+  return frmtVideoDuration(
+    videos.reduce((total, videoDur) => total + videoDur.duration, 0) / 1000
+  );
+};
+
 export const frmtUploadDate = (sinceDate: string) => {
   const since = new Date(sinceDate);
   const now = new Date();

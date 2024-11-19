@@ -1,6 +1,7 @@
 import "./youtubeListInfo.css";
 import {
   faCalendarDays,
+  faClock,
   faEye,
   faLink,
   faListUl,
@@ -9,7 +10,11 @@ import {
 import type { yt } from "@_types/youtube-types";
 import FontIcon from "@_components/decoration/FontIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { frmtUploadDate, frmtViews } from "@_routes/youtube/utils/helpers";
+import {
+  frmtUploadDate,
+  frmtViews,
+  getPlaylistTotalDuration,
+} from "@_routes/youtube/utils/helpers";
 
 interface ListInfoProps {
   listDetails: yt.Search.ListInfo;
@@ -59,6 +64,13 @@ const YoutubeListInfo = ({ listDetails }: ListInfoProps) => {
         <div className="video-count" title={`${listDetails.videoCount} video`}>
           <FontAwesomeIcon icon={faRectangleList} />
           <span>{listDetails.videoCount} video</span>
+        </div>
+
+        <div className="total-time" title="total time">
+          <FontAwesomeIcon icon={faClock} />
+          <span>
+            {getPlaylistTotalDuration(listDetails.videos).durationText}
+          </span>
         </div>
 
         <div className="views" title={`${listDetails.views} view`}>
