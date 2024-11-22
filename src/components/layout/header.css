@@ -9,6 +9,7 @@ header {
   top: 0;
   transition: background-color var(--transition-ms);
   z-index: 100;
+  height: var(--header-height);
 
   &.scroll-down {
     background-color: light-dark(

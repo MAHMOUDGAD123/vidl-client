@@ -29,6 +29,7 @@
   --contianer-padding: 45px;
   --main-border-rad: 20px;
   --transition-ms: 300ms;
+  --header-height: 85px;
 
   --main-bg-col: light-dark(rgb(255 255 255 / 0.9), rgb(15 23 42 / 0.9));
 
@@ -93,7 +94,7 @@ a {
 main {
   padding: var(--contianer-padding);
   gap: 30px;
-  min-height: 100vh;
+  min-height: calc(100vh - var(--header-height));
   max-width: 1280px;
   margin-inline: auto;
 }
