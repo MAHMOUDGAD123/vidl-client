@@ -25,9 +25,13 @@ const YoutubeListInfo = ({ listDetails }: ListInfoProps) => {
     <div className="youtube-list-info">
       <div className="thumbnail">
         <img
-          src={listDetails.thumbnail?.url}
+          src={
+            listDetails.thumbnail?.url
+              ? listDetails.thumbnail?.url
+              : "/imgs/vidl.png"
+          }
           alt="thumbnail"
-          decoding="async"
+          decoding="sync"
         />
 
         <a className="list-link" href={listDetails.url} target="_blank">
