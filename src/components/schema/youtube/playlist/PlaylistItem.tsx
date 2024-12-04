@@ -33,7 +33,9 @@ const PlaylistItem = ({ video, counter, index }: PlaylistProps) => {
     );
 
     if (import.meta.env.DEV) {
-      console.log(`item ${index + 1} ${indicesListHasIt ? "🟩" : "🟥"}`);
+      setTimeout(() => {
+        console.log(`item ${index + 1} ${indicesListHasIt ? "🟩" : "🟥"}`);
+      }, 0);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
