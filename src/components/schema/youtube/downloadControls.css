@@ -9,6 +9,7 @@
   max-width: 450px;
   background-color: light-dark(#ddd, var(--sec-col2));
   place-self: center;
+  margin-inline: auto;
 }
 
 @media (width <= 500px) {
