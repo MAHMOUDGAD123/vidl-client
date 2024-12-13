@@ -1,4 +1,6 @@
 .popup-holder {
+  outline: none;
+
   &:has(.popup.show-up) .popup-toggle,
   & .popup-toggle:hover {
     color: var(--main-col);

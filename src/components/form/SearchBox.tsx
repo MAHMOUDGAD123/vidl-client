@@ -40,7 +40,7 @@ const SearchBox = () => {
       </button>
 
       <div className="hints">
-        <i className="fi fi-ss-interrogation hints-icon" tabIndex={0}></i>
+        <i className="fi fi-ss-interrogation hints-icon" tabIndex={-1}></i>
 
         <div className="info">
           <div className="hint">

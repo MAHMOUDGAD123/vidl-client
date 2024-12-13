@@ -117,7 +117,7 @@
   width: 70px;
   aspect-ratio: 1;
 
-  &:hover {
+  &:is(:hover, :focus-visible) {
     translate: 0 -3px;
     box-shadow: 0 10px 15px light-dark(#00000080, #00b3ff80);
   }

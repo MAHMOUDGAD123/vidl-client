@@ -6,6 +6,7 @@ import { linkIcons } from "../../../public/utils/constants";
 import DropMenu from "../popup/DropMenu";
 import FontIcon from "../decoration/FontIcon";
 import PopupProvider from "../popup/PopupProvider";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const MiniNavMenu = () => {
   const [showPopupMenu, setShowPopupMenu] = useState(false);
@@ -14,7 +15,7 @@ const MiniNavMenu = () => {
     <PopupProvider>
       <div className="mini-nav-menu">
         <div
-          tabIndex={0}
+          tabIndex={-1}
           className="mini-nav-bars popup-toggle"
           onClick={(e) => {
             setShowPopupMenu(
@@ -34,9 +35,7 @@ const MiniNavMenu = () => {
               <NavLink
                 key={name}
                 to={`/${name}`}
-                children={
-                  <FontIcon icon={icon} title={name} titlePosition="left" />
-                }
+                children={<FontAwesomeIcon icon={icon} />}
               />
             );
           })}

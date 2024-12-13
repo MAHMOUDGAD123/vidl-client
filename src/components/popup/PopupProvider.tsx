@@ -18,7 +18,6 @@ const PopupProvider = ({ children }: PopupProps) => {
 
   return (
     <div
-      tabIndex={0}
       className="popup-holder"
       onClick={onClickHandler}
       onBlur={onBlurHandler}

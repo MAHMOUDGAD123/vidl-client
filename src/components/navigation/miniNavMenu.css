@@ -10,11 +10,7 @@
     border: none;
     outline: none;
     width: 30px;
-  }
-
-  /* remove the hover effect from font-icon element */
-  & > .drop-menu > a > .font-icon:hover {
-    /* color: inherit; */
+    outline: none;
   }
 
   & .title.left {

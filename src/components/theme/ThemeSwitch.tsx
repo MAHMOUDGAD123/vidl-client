@@ -6,6 +6,7 @@ import { useRef, useLayoutEffect } from "react";
 import { useStateLs } from "@_hooks/useStateLs";
 import DropMenu from "@_components/popup/DropMenu";
 import PopupProvider from "@_components/popup/PopupProvider";
+import FontIcon from "@_components/decoration/FontIcon";
 
 type ThemeCode = 1 | 2 | 3;
 type Theme = "light" | "dark" | "light dark";
@@ -46,8 +47,8 @@ const ThemeSwitch = () => {
   return (
     <PopupProvider>
       <div id="themeSwitch">
-        <div className="switch popup-toggle">
-          <FontAwesomeIcon icon={currentThemeIcon.current} />
+        <div className="switch popup-toggle" tabIndex={-1}>
+          <FontIcon icon={currentThemeIcon.current} />
         </div>
 
         <DropMenu>

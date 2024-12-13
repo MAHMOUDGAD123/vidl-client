@@ -1,3 +1,9 @@
+@property --v-clip-x-value {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
 #logo {
   display: flex;
   align-items: center;
@@ -16,37 +22,29 @@
 
   & > .logo-icon {
     color: light-dark(var(--ligt-text-col), var(--drk-text-col));
-    transition-property: color, rotate;
-    transition-duration: var(--transition-ms);
+    transition-property: color, rotate, --v-clip-x-value;
+    transition-duration: var(--transition-ms), var(--transition-ms), 500ms;
     position: relative;
     overflow: hidden;
-
-    &::before {
-      content: "";
-      transition-property: left;
-      transition-duration: inherit;
-      position: absolute;
-      width: 65%;
-      aspect-ratio: 1;
-      background-color: var(--main-bg-col);
-      top: 45%;
-      translate: -50% -50%;
-      rotate: z 45deg;
-      left: -50%;
-      z-index: 1;
-    }
+    clip-path: polygon(
+      0% 0%,
+      0% 15%,
+      var(--v-clip-x-value) 45%,
+      0% 79%,
+      0% 100%,
+      100% 100%,
+      100% 0%
+    );
   }
 
   &:is(:focus-visible, :hover) {
     background-size: 100% 100%, 100%;
 
     & > .logo-icon {
+      animation: v-clip 1s linear forwards;
       color: var(--main-col);
       rotate: 90deg;
-
-      &::before {
-        left: 0;
-      }
+      --v-clip-x-value: 50%;
     }
   }
 }
