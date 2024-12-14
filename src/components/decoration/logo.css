@@ -4,11 +4,23 @@
   initial-value: 0%;
 }
 
-#logo {
+.logo-safari {
+  font-size: 2.75rem;
+  font-weight: bolder;
+  margin-right: auto;
+  transition: color var(--transition-ms);
+
+  &:is(:focus-visible, :hover) {
+    color: var(--main-col);
+  }
+}
+
+.logo {
   display: flex;
   align-items: center;
   gap: 5px;
   font-size: 2.75rem;
+  font-weight: bolder;
   background-image: linear-gradient(var(--main-col), var(--main-col));
   background-repeat: no-repeat;
   background-size: 0 100%, 100%;
@@ -41,7 +53,6 @@
     background-size: 100% 100%, 100%;
 
     & > .logo-icon {
-      animation: v-clip 1s linear forwards;
       color: var(--main-col);
       rotate: 90deg;
       --v-clip-x-value: 50%;
@@ -50,7 +61,8 @@
 }
 
 @media (width <= 640px) {
-  #logo {
+  .logo,
+  .logo-safari {
     font-size: 2.5rem;
   }
 }
