@@ -78,7 +78,7 @@ export const frmtUploadDate = (sinceDate: string) => {
   if (hours > 0) return finalFormat(hours, "hour");
 
   const minutes = diff.getUTCMinutes();
-  if (minutes > 0) return finalFormat(minutes, "minutes");
+  if (minutes > 0) return finalFormat(minutes, "minute");
 
   const seconds = diff.getUTCSeconds();
   if (seconds > 0) return finalFormat(seconds, "second");
