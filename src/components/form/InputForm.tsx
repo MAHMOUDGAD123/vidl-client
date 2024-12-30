@@ -1,5 +1,5 @@
 import "./inputForm.css";
-import { Form } from "react-router-dom";
+import { Form } from "react-router";
 import SearchBox from "./SearchBox";
 
 const InputForm = () => {

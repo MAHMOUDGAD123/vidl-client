@@ -1,5 +1,5 @@
 import "./errorBoundary.css";
-import { Link, useRouteError } from "react-router-dom";
+import { Link, useRouteError } from "react-router";
 import { useRef } from "react";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";

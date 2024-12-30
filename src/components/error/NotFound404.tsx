@@ -1,6 +1,6 @@
 // import "@flaticon/flaticon-uicons/css/all/all.css";
 import "./notFound404.css";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

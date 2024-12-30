@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router";
 import BackToTopBtn from "../popup/BackToTopBtn";
 import Footer from "./Footer";
 import Header from "./Header";

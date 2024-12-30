@@ -3,7 +3,7 @@ import {
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
-} from "react-router-dom";
+} from "react-router";
 // components
 import RootLayout from "@_components/layout/RootLayout";
 import ErrorBoundary from "@_components/error/ErrorBoundary";

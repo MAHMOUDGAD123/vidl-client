@@ -1,5 +1,5 @@
 import "./downloadForm.css";
-import { Form } from "react-router-dom";
+import { Form } from "react-router";
 
 interface DownloadFormProps {
   children: React.ReactNode | React.ReactNode[];

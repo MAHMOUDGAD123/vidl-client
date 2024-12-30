@@ -1,7 +1,7 @@
 import "./searchBox.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { useNavigation } from "react-router-dom";
+import { useNavigation } from "react-router";
 import Spinner from "./Spinner";
 import { useRef } from "react";
 

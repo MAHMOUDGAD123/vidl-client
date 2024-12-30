@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import Page from "@_components/layout/Page";
 import { linkIcons } from "@_utils/constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

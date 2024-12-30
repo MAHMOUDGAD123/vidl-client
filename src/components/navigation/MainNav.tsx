@@ -1,5 +1,5 @@
 import "./mainNav.css";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 
 const MainNav = () => {
   return (
