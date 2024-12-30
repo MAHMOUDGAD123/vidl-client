@@ -9,8 +9,8 @@ interface PlaylistProps {
 }
 
 const Playlist = ({ vidoes }: PlaylistProps) => {
-  const playlistEle = useRef<HTMLDivElement>(null);
-  const backToTopBtn = useRef<HTMLDivElement>(null);
+  const playlistEle = useRef<HTMLDivElement | null>(null);
+  const backToTopBtn = useRef<HTMLDivElement | null>(null);
 
   return (
     <div

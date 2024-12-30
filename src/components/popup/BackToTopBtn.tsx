@@ -4,7 +4,7 @@ import FontIcon from "../decoration/FontIcon";
 import { forwardRef } from "react";
 
 interface BackToTopBtnProps {
-  targetEle: React.RefObject<HTMLDivElement | Window>;
+  targetEle: React.RefObject<HTMLDivElement | Window | null>;
   id?: string;
 }
 
