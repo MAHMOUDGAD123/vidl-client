@@ -2,7 +2,7 @@ import "./downloadControls.css";
 import { useReducer } from "react";
 import DownloadBtn from "./DownloadBtn";
 import ProgressScreen from "./ProgressScreen";
-import { $progressMax } from "@_utils/constants";
+import { $progressMax } from "src/utils/constants";
 import type { yt } from "@_types/youtube-types";
 import type { ProviderType } from "@_types/globals";
 

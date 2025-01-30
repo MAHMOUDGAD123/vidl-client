@@ -1,5 +1,5 @@
 import axios, { AxiosError } from "axios";
-import { download } from "@_utils/tools";
+import { download } from "src/utils/tools";
 import type { yt } from "@_types/youtube-types";
 import { startProgressInterval, stopProgressInterval } from "./helpers";
 import type {

@@ -16,9 +16,9 @@
     "baseUrl": "./",
     "paths": {
       "@_types/*": ["public/types/*"],
-      "@_utils/*": ["public/utils/*"],
+      "@_utils/*": ["src/utils/*"],
       "@_fonts/*": ["public/fonts/*"],
-      "@_hooks/*": ["public/hooks/*"],
+      "@_hooks/*": ["src/hooks/*"],
       "@_imgs/*": ["public/imgs/*"],
       "@_test/*": ["public/test/*"],
       "@_routes/*": ["src/routes/*"],

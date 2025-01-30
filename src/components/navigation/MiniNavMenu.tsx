@@ -2,7 +2,7 @@ import "./miniNavMenu.css";
 import { faBars, faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router";
 import { useState } from "react";
-import { linkIcons } from "../../../public/utils/constants";
+import { linkIcons } from "../../utils/constants";
 import DropMenu from "../popup/DropMenu";
 import FontIcon from "../decoration/FontIcon";
 import PopupProvider from "../popup/PopupProvider";

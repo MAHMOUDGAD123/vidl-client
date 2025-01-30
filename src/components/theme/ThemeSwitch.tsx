@@ -3,7 +3,7 @@ import { faDesktop, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef, useLayoutEffect } from "react";
-import { useStateLs } from "@_hooks/useStateLs";
+import { useStateLs } from "src/hooks/useStateLs";
 import DropMenu from "@_components/popup/DropMenu";
 import PopupProvider from "@_components/popup/PopupProvider";
 import FontIcon from "@_components/decoration/FontIcon";

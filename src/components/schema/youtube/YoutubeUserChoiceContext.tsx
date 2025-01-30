@@ -1,4 +1,4 @@
-import { useStateLs } from "@_hooks/useStateLs";
+import { useStateLs } from "src/hooks/useStateLs";
 import {
   type UserChoice,
   defaultChoice,

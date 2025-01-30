@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import Page from "@_components/layout/Page";
-import { linkIcons } from "@_utils/constants";
+import { linkIcons } from "src/utils/constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const HomePage = () => {
