@@ -22,7 +22,7 @@
 
   &.loading {
     background-color: var(--main-col2);
-    scale: 1.07;
+    scale: 1.05;
 
     & > svg {
       animation: spinify infinite 1.25s linear;

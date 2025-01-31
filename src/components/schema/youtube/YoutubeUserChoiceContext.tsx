@@ -6,7 +6,7 @@ import {
 } from "@_routes/youtube/utils/contexts";
 
 interface YoutubeUserChoiceContextProps {
-  children: React.ReactNode | React.ReactNode[];
+  children: React.ReactNode;
 }
 
 const YoutubeUserChoiceContext = ({

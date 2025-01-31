@@ -3,7 +3,7 @@
   height: 48px;
   width: 48px;
   border-radius: 100%;
-  background-color: light-dark(#ddd, var(--sec-col3));
+  background-color: light-dark(#ccc, var(--sec-col3));
   cursor: pointer;
   overflow: hidden;
   transition: all 0.2s ease;
