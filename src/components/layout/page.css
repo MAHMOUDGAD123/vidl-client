@@ -6,6 +6,30 @@
   padding-top: 30px;
   text-align: center;
 
+  & .info-card {
+    color: light-dark(var(--ligt-text-col), var(--drk-text-col));
+    background-color: light-dark(var(--ligt-bg-col), var(--sec-col2));
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-family: Arial;
+    filter: drop-shadow(0 0 3px var(--main-col));
+    max-width: 400px;
+
+    @media (width <= 450px) {
+      flex-direction: column;
+    }
+
+    & > svg {
+      font-size: 2.5rem;
+      color: var(--main-col);
+      animation: pulse 1s infinite alternate;
+    }
+  }
+
   & > .title {
     font-size: 2.5rem;
     font-weight: bolder;

@@ -41,6 +41,7 @@
 }
 
 body {
+  min-width: 290px;
   color: light-dark(var(--ligt-text-col), var(--drk-text-col));
   background-repeat: no-repeat;
   background-image: linear-gradient(var(--main-bg-col), var(--main-bg-col)),
@@ -152,5 +153,11 @@ main {
 @keyframes spinify {
   to {
     transform: rotate(1turn);
+  }
+}
+
+@keyframes pulse {
+  to {
+    opacity: 0.5;
   }
 }
