@@ -63,10 +63,15 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--main-col) var(--sec-col2);
   /* user-select: none; */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  @media (width <= 750px) {
+    scrollbar-width: none;
+  }
 
   &::selection {
     background-color: var(--main-col);
